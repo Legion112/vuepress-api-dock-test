@@ -1,6 +1,12 @@
 module.exports = {
+    base: '/vuepress-deploy/',
     title: 'Test',
     description: 'Cool',
+    plugins: [
+        ['@vuepress/search', {
+            searchMaxSuggestions: 10
+        }],
+    ],
     locales: {
         '/': {
             lang: 'ru-RU',
@@ -28,8 +34,8 @@ module.exports = {
                     }
                 },
                 nav: [
-                    { text: 'Главная', link: '/' , ariaLabel: 'Main' },
-                    { text: 'Документация', link: '/guide/' , ariaLabel: 'Guide' }
+                    {text: 'Главная', link: '/', ariaLabel: 'Main'},
+                    {text: 'Документация', link: '/guide/', ariaLabel: 'Guide'}
                 ],
                 collapsable: true,
                 sidebarDepth: 0,
@@ -45,8 +51,9 @@ module.exports = {
 };
 
 
-function getGuideSidebar (WorkingWithApi, Payments) {
+function getGuideSidebar(WorkingWithApi, Payments) {
     return [
+        '',
         {
             title: WorkingWithApi,
             collapsable: false,
